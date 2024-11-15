@@ -1,4 +1,4 @@
-/* Base styles */
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -7,40 +7,41 @@
 }
 
 body {
-  background-color: #f0f8ff; /* Powder Blue */
-  color: #333;
-  font-size: 16px;
-  line-height: 1.6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column; /* Stack content vertically */
+  background-image: url('hotel.jpg'); /* Replace 'your-image-url.jpg' with the path to your background image */
+  background-size: cover; /* Ensures the background covers the entire page */
+  background-position: center; /* Centers the background image */
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+  font-family: Arial, sans-serif;
 }
 
+.container {
+  background-color: rgba(255, 255, 255, 0.9); /* Adds a semi-transparent white background to make form content readable */
+  max-width: 600px;
+  margin: 2em auto;
+  padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
 h1 {
-  text-align: center;
   color: #005f73;
-  margin-bottom: 10px; /* Space below heading */
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 p {
-  text-align: center;
   color: #555;
-  margin-bottom: 30px; /* Space below paragraph */
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
-/* Form Container */
-#survey-form {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Form Styles */
+form {
   width: 100%;
-  max-width: 500px;
+  text-align: left;
 }
 
-/* Form elements */
 label {
   font-weight: bold;
   margin-top: 10px;
@@ -48,42 +49,50 @@ label {
   color: #333;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="number"],
-select,
-textarea {
+input, select, textarea {
   width: 100%;
   padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  margin: 8px 0 20px;
   border: 2px solid #0077b6;
   border-radius: 5px;
   font-size: 16px;
-  transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus,
-select:focus,
-textarea:focus {
-  border-color: #005f73;
-  outline: none;
 }
 
 textarea {
   resize: vertical;
-  height: 120px;
+  height: 100px;
 }
 
-/* Radio buttons and checkboxes */
-input[type="radio"],
-input[type="checkbox"] {
-  margin-right: 10px;
+fieldset {
+  border: none;
+  margin-bottom: 20px;
 }
 
-/* Submit button */
+legend {
+  font-weight: bold;
+  color: #005f73;
+  margin-bottom: 10px;
+}
+
+.rating, .facilities {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.rating label, .facilities label {
+  font-weight: normal;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
+.rating input[type="radio"], .facilities input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Submit Button */
 #submit {
   background-color: #005f73;
   color: #fff;
@@ -92,33 +101,8 @@ input[type="checkbox"] {
   border-radius: 5px;
   font-size: 16px;
   cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s ease;
 }
 
 #submit:hover {
   background-color: #003d42;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  h1 {
-      font-size: 1.5rem;
-  }
-
-  p {
-      font-size: 1rem;
-  }
-
-  #survey-form {
-      padding: 15px;
-  }
-
-  label, input, select, textarea, #submit {
-      font-size: 14px;
-  }
-
-  textarea {
-      height: 100px;
-  }
 }

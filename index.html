@@ -3,39 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hotel Service Survey</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1 id="title">Survey Form</h1>
-    <p id="description"></p>
-    <form id="survey-form">
-        <label id="name-label">Name
-            <input placeholder="Enter your name" required id="name" type="text"></label>
-        <label id="email-label">Email</label>
-            <input placeholder="Enter your email" required id="email" type="email">
-        <label id="number-level">Age</label>
-            <input placeholder="Age" id="number" type="number" min="0" max="10"></input>
+    <div class="container">
+        <h1 id="title">Hotel Service Feedback Survey</h1>
+        <p id="description">We value your feedback! Please fill out this form to help us improve our service.</p>
+        <form id="survey-form">
+            <label id="name-label" for="name">Name</label>
+            <input placeholder="Enter your full name" required id="name" type="text">
 
-            <select name="" id="dropdown">
-                <option value="">Option 1</option>
-                <option value="">Option 2</option>
+            <label id="email-label" for="email">Email</label>
+            <input placeholder="Enter your email address" required id="email" type="email">
+
+            <label id="age-label" for="age">Age</label>
+            <input placeholder="Enter your age" required id="age" type="number" min="1" max="120">
+
+            <label id="dropdown-label" for="dropdown">How was your overall experience?</label>
+            <select id="dropdown" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="average">Average</option>
+                <option value="poor">Poor</option>
             </select>
 
+            <fieldset>
+                <legend>Rate the following aspects (1 = Bad, 5 = Excellent):</legend>
 
-                <input value="test1" name="test" type="radio">
+                <label>Service Quality</label>
+                <div class="rating">
+                    <label><input type="radio" name="service-quality" value="1"> 1</label>
+                    <label><input type="radio" name="service-quality" value="2"> 2</label>
+                    <label><input type="radio" name="service-quality" value="3"> 3</label>
+                    <label><input type="radio" name="service-quality" value="4"> 4</label>
+                    <label><input type="radio" name="service-quality" value="5"> 5</label>
+                </div>
 
-                <input value="test2" name="test" type="radio">
+                <label>Cleanliness</label>
+                <div class="rating">
+                    <label><input type="radio" name="cleanliness" value="1"> 1</label>
+                    <label><input type="radio" name="cleanliness" value="2"> 2</label>
+                    <label><input type="radio" name="cleanliness" value="3"> 3</label>
+                    <label><input type="radio" name="cleanliness" value="4"> 4</label>
+                    <label><input type="radio" name="cleanliness" value="5"> 5</label>
+                </div>
 
-            <input type="checkbox" value="checkbox1">
-            <input type="checkbox" value="checkbox2">
-            <input type="checkbox" value="checkbox3">
+                <label>Value for Money</label>
+                <div class="rating">
+                    <label><input type="radio" name="value-for-money" value="1"> 1</label>
+                    <label><input type="radio" name="value-for-money" value="2"> 2</label>
+                    <label><input type="radio" name="value-for-money" value="3"> 3</label>
+                    <label><input type="radio" name="value-for-money" value="4"> 4</label>
+                    <label><input type="radio" name="value-for-money" value="5"> 5</label>
+                </div>
+            </fieldset>
 
-            <textarea type="textarea"></textarea>
+            <fieldset>
+                <legend>Facilities Used (Rate each from 1 to 5):</legend>
+                
+                <label>Swimming Pool</label>
+                <div class="rating">
+                    <label><input type="radio" name="swimming-pool" value="1"> 1</label>
+                    <label><input type="radio" name="swimming-pool" value="2"> 2</label>
+                    <label><input type="radio" name="swimming-pool" value="3"> 3</label>
+                    <label><input type="radio" name="swimming-pool" value="4"> 4</label>
+                    <label><input type="radio" name="swimming-pool" value="5"> 5</label>
+                </div>
 
-            <button type="submit" id="submit">Submit</button>
+                <label>Gym</label>
+                <div class="rating">
+                    <label><input type="radio" name="gym" value="1"> 1</label>
+                    <label><input type="radio" name="gym" value="2"> 2</label>
+                    <label><input type="radio" name="gym" value="3"> 3</label>
+                    <label><input type="radio" name="gym" value="4"> 4</label>
+                    <label><input type="radio" name="gym" value="5"> 5</label>
+                </div>
 
+                <label>Spa</label>
+                <div class="rating">
+                    <label><input type="radio" name="spa" value="1"> 1</label>
+                    <label><input type="radio" name="spa" value="2"> 2</label>
+                    <label><input type="radio" name="spa" value="3"> 3</label>
+                    <label><input type="radio" name="spa" value="4"> 4</label>
+                    <label><input type="radio" name="spa" value="5"> 5</label>
+                </div>
 
-    </form>
+                <label>Restaurant</label>
+                <div class="rating">
+                    <label><input type="radio" name="restaurant" value="1"> 1</label>
+                    <label><input type="radio" name="restaurant" value="2"> 2</label>
+                    <label><input type="radio" name="restaurant" value="3"> 3</label>
+                    <label><input type="radio" name="restaurant" value="4"> 4</label>
+                    <label><input type="radio" name="restaurant" value="5"> 5</label>
+                </div>
+            </fieldset>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" placeholder="Share your thoughts or suggestions..." rows="4"></textarea>
+
+            <button type="submit" id="submit">Submit Feedback</button>
+        </form>
+    </div>
 </body>
 </html>
